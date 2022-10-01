@@ -1969,6 +1969,7 @@ $(if $(INTERNAL_USERIMAGES_SPARSE_F2FS_FLAG),$(hide) echo "f2fs_sparse_flag=$(IN
 $(if $(BOARD_EROFS_COMPRESSOR),$(hide) echo "erofs_default_compressor=$(BOARD_EROFS_COMPRESSOR)" >> $(1))
 $(if $(BOARD_EROFS_COMPRESS_HINTS),$(hide) echo "erofs_default_compress_hints=$(BOARD_EROFS_COMPRESS_HINTS)" >> $(1))
 $(if $(BOARD_EROFS_DEDUP),$(hide) echo "erofs_dedup=$(BOARD_EROFS_DEDUP)" >> $(1))
+$(if $(BOARD_EROFS_FRAGMENTS),$(hide) echo "erofs_fragments=$(BOARD_EROFS_FRAGMENTS)" >> $(1))
 $(if $(BOARD_EROFS_PCLUSTER_SIZE),$(hide) echo "erofs_pcluster_size=$(BOARD_EROFS_PCLUSTER_SIZE)" >> $(1))
 $(if $(BOARD_EROFS_SHARE_DUP_BLOCKS),$(hide) echo "erofs_share_dup_blocks=$(BOARD_EROFS_SHARE_DUP_BLOCKS)" >> $(1))
 $(if $(BOARD_EROFS_USE_LEGACY_COMPRESSION),$(hide) echo "erofs_use_legacy_compression=$(BOARD_EROFS_USE_LEGACY_COMPRESSION)" >> $(1))

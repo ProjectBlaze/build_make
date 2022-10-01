@@ -362,6 +362,8 @@ def BuildImageMkfs(in_dir, prop_dict, out_file, target_out, fs_config):
       build_command.extend(["-E", "ztailpacking"])
     if "erofs_dedup" in prop_dict:
       build_command.extend(["-E", "dedupe"])
+    if "erofs_fragments" in prop_dict:
+      build_command.extend(["-E", "fragments"])
 
     build_command.extend([out_file, in_dir])
     if "erofs_sparse_flag" in prop_dict and not disable_sparse:
@@ -666,6 +668,7 @@ def ImagePropFromGlobalDict(glob_dict, mount_point):
       "erofs_dedup",
       "erofs_default_compressor",
       "erofs_default_compress_hints",
+      "erofs_fragments",
       "erofs_pcluster_size",
       "erofs_share_dup_blocks",
       "erofs_sparse_flag",
@@ -719,6 +722,7 @@ def ImagePropFromGlobalDict(glob_dict, mount_point):
       (True, "erofs_dedup", "erofs_dedup"),
       (True, "erofs_use_legacy_compression", "erofs_use_legacy_compression"),
       (True, "erofs_use_ztailpacking", "erofs_use_ztailpacking"),
+      (True, "erofs_fragments", "erofs_fragments"),
       (True, "ext4_share_dup_blocks", "ext4_share_dup_blocks"),
       (True, "{}_base_fs_file", "base_fs_file"),
       (True, "{}_disable_sparse", "disable_sparse"),
