@@ -482,7 +482,7 @@ def RunE2fsck(out_file):
 
 
 def RunErofsFsck(out_file):
-  fsck_command = ["fsck.erofs", out_file]
+  fsck_command = ["fsck.erofs", "--extract", out_file]
   try:
     common.RunAndCheckOutput(fsck_command)
   except:
